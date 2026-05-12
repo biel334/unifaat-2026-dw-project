@@ -30,7 +30,7 @@ router.use("/users", userRouter);
 router.use("/addresses", addressRouter);
 
 /** Environment - TF 10 */
-router.get("/ambiente", EnvironmentController);
+router.get('/ambiente', (req, res) => EnvironmentController.index(req, res));
 
 /** Fallback 404 para arquivos/páginas não encontrados */
 router.use(Return404Controller);
